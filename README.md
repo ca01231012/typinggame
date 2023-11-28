@@ -1,1 +1,1 @@
-ソリティア
+Typinggame
