@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Typing Game</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f3f3f3;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    #game-container {
+      max-width: 400px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+    p {
+      margin: 10px 0;
+      color: #555;
+    }
+    input {
+      padding: 8px;
+      margin-top: 10px;
+      width: 100%;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      cursor: pointer;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    select {
+      padding: 8px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div id="game-container">
+    <h1>Typing Game</h1>
+    <p>Type the words below:</p>
+    <p id="word"></p>
+    <input type="text" id="input" placeholder="Start typing...">
+    <p id="message"></p>
+    <p id="timer">Time: 60s</p>
+    <p id="score">Score: 0</p>
+    <div>
+      <label for="difficulty">Choose Difficulty:</label>
+      <select id="difficulty" onchange="changeDifficulty(this.value)">
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+      <button onclick="startGame()">Start</button>
+      <button onclick="togglePause()">Pause/Resume</button>
+      <button onclick="resetGame()">Reset</button>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
